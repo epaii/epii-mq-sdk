@@ -43,7 +43,9 @@ class MqClient
 
     public static function finish($ret_code = "0", IMqClient $client = null)
     {
-        return new ApiResult(self::getClicent($client)->finish($ret_code));
+        if (self::getWorkId())
+            return new ApiResult(self::getClicent($client)->finish($ret_code));
+        return new ApiResult();
     }
 
     /**
