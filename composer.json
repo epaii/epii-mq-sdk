@@ -1,6 +1,6 @@
 {
   "name": "epii/tiny-mq-sdk",
-  "description": "一个超级简单的php template engine，可扩展其它模板引擎。",
+  "description": "一个超级简单的消息队列 tiny-mq 的client sdk。",
   "authors": [
     {
       "name": "MrRen Epii",
