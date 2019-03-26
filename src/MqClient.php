@@ -23,6 +23,12 @@ class MqClient
     {
 
         self::$client = $client;
+
+        register_shutdown_function(function () {
+            self::finish("_auto_");
+        });
+
+
     }
 
     private static $list = [];
@@ -43,9 +49,10 @@ class MqClient
 
     public static function finish($ret_code = "0", IMqClient $client = null)
     {
+
         if (self::getWorkId())
             return new ApiResult(self::getClicent($client)->finish($ret_code));
-        return new ApiResult();
+        return null;
     }
 
     /**
